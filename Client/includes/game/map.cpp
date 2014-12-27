@@ -43,6 +43,25 @@ Map::Map(std::string config_filename):
         }
         tiles.push_back(objects::Tile(location,tiles_texture));
     }
+    // create coins
+    std::string coin_texture_location = map_config.find_string("coin_texture");
+    coin_surface=std::make_shared<SDL_Surface*>(SDL_LoadBMP(coin_texture_location.c_str()));
+    Uint32 key = SDL_MapRGB((*coin_surface)->format,255,0,255);
+    SDL_SetColorKey( *coin_surface , SDL_TRUE , key );
+    coin_texture=std::make_shared<SDL_Texture*>(SDL_CreateTextureFromSurface(video::Video_subsystem::get_instance().get_renderer(),*coin_surface.get()));
+    std::vector<std::string> enable_coins =  map_config.find_strings("coin");
+
+    for(auto &x : enable_coins)
+    {
+        vector<int> position = utility::get_numbers_from_string(x);
+        SDL_Rect location;
+        location.x=position[0];
+        location.y=position[1];
+        location.h=(*coin_surface)->h;
+        location.w=(*coin_surface)->w;
+        coins.push_back(objects::Prop(location,coin_texture));
+    }
+
     map_gravity = atoi(map_config.find_string("gravity").c_str());
     // create the player
     main_player=new objects::Player(map_config.find_string("players_config"));
@@ -63,6 +82,10 @@ void Map::show()
     {
         a.show();
     }
+    for( auto & a : coins)
+    {
+        a.show();
+    }
     main_player->center_screen();
     main_player->show();
 
@@ -77,6 +100,7 @@ void Map::handle_collisions()
             main_player->notify_collision(&a);
         }
     }
+
 }
 
 void Map::add_wall(SDL_Point point)
@@ -119,7 +143,7 @@ void Map::delete_wall(SDL_Point point)
     }
 }
 
-void Map::save_walls()
+void Map::save_map()
 {
     std::ofstream file( "config/walls.txt" , std::ios_base::out ) ;
     for(auto &a : tiles)

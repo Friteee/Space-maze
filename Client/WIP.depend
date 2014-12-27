@@ -1626,12 +1626,13 @@
 	"gaming_mode.h"
 	"editor_mode.h"
 
-1419567978 d:\github\space-maze\client\includes\game\map.h
+1419708543 d:\github\space-maze\client\includes\game\map.h
 	"SDL.h"
-	<deque>
+	<vector>
 	<string>
 	"../objects/object.h"
 	"../objects/player.h"
+	"../objects/prop.h"
 	"../objects/background.h"
 	"../objects/tile.h"
 	"../utility/configuration.h"
@@ -1646,11 +1647,11 @@
 	<vector>
 	<string>
 
-1419687367 source:d:\github\space-maze\client\includes\game\gaming_mode.cpp
+1419706677 source:d:\github\space-maze\client\includes\game\gaming_mode.cpp
 	"gaming_mode.h"
 	"game_logic.h"
 
-1419679530 source:d:\github\space-maze\client\includes\game\map.cpp
+1419708535 source:d:\github\space-maze\client\includes\game\map.cpp
 	"map.h"
 	<SDL.h>
 	<vector>
@@ -1690,7 +1691,7 @@
 	"tile_menu.h"
 	<cstdio>
 
-1419567978 source:d:\github\space-maze\client\includes\main.cpp
+1419706940 source:d:\github\space-maze\client\includes\main.cpp
 	<SDL.h>
 	"video/window.h"
 	"game/game_logic.h"
@@ -1782,12 +1783,12 @@
 	"object.h"
 	<memory>
 
-1419690538 source:d:\github\space-maze\client\includes\gui\text.cpp
+1419706942 source:d:\github\space-maze\client\includes\gui\text.cpp
 	"text.h"
 	"../utility/functions.h"
 	"../video/window.h"
 
-1419690539 d:\github\space-maze\client\includes\gui\text.h
+1419706942 d:\github\space-maze\client\includes\gui\text.h
 	"text.h"
 	"gui_element.h"
 	"../utility/configuration.h"

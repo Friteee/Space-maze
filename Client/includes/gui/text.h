@@ -21,6 +21,8 @@ class Text : Gui_element
     private:
 
     std::string text;
+    TTF_Font * font;
+    SDL_Color color_key;
 
 };
 

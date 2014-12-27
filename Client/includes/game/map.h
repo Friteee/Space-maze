@@ -2,10 +2,11 @@
 #define MAP_H_INCLUDED
 
 #include "SDL.h"
-#include <deque>
+#include <vector>
 #include <string>
 #include "../objects/object.h"
 #include "../objects/player.h"
+#include "../objects/prop.h"
 #include "../objects/background.h"
 #include "../objects/tile.h"
 #include "../utility/configuration.h"
@@ -28,7 +29,7 @@ class Map
     //function to add a wall
     void add_wall(SDL_Point point);
     // save a wall
-    void save_walls();
+    void save_map();
     //delete a wall
     void delete_wall(SDL_Point point);
 
@@ -39,14 +40,22 @@ class Map
     // main background for a map
     objects::Background main_background;
     // dequeue of walls
-    std::deque<objects::Tile> tiles;
+    std::vector<objects::Tile> tiles;
     // pointers to walls surface and texture
     shared_ptr<SDL_Texture*> tiles_texture;
     shared_ptr<SDL_Surface*> tiles_surface;
+    // pointers to coin surface and texture
+    shared_ptr<SDL_Texture*> coin_texture;
+    shared_ptr<SDL_Surface*> coin_surface;
     // map configuration
     utility::Configuration map_config;
     // maps gravity
     int map_gravity;
+    // coins
+    std::vector<objects::Prop> coins;
+    //
+    //gui::Text
+
 
 };
 

@@ -7,6 +7,7 @@ using namespace std;
 
 int main(int argc, char* args[])
 try{
+    setbuf(stdout, nullptr);
     bool error_check;
     if(argc==2)
     {

@@ -64,16 +64,6 @@ bool Gaming_mode::handle_input()
         // minimize the window
         video::Video_subsystem::minimize();
     }
-    SDL_Rect camera_location = video::Camera::get_position();
-    int x,y;
-    if(SDL_GetMouseState(&x , &y) & SDL_BUTTON(SDL_BUTTON_LEFT))
-    {
-        game_map.add_wall(SDL_Point{x+camera_location.x,y+camera_location.y});
-    }
-    if(SDL_GetMouseState(&x , &y) & SDL_BUTTON(SDL_BUTTON_RIGHT))
-    {
-        game_map.delete_wall(SDL_Point{x+camera_location.x,y+camera_location.y});
-    }
     return true;
 }
 
@@ -110,7 +100,6 @@ bool Gaming_mode::run()
         fps++;
         if(fps_timer.get_ticks()>1000)
         {
-            game_map.save_walls();
             printf("Current fps = %i \n",fps);
             fps_timer.reload();
             fps=0;
@@ -122,7 +111,7 @@ bool Gaming_mode::run()
         sleep_timer.reload();
 
     }
-    game_map.save_walls();
+    game_map.save_map();
     return true;
 }
 
