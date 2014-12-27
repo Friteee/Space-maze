@@ -27,7 +27,7 @@
 			<Target title="Release">
 				<Option output="bin/Release/WIP" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
-				<Option type="1" />
+				<Option type="0" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
@@ -68,6 +68,8 @@
 		<Unit filename="includes/gui/click.cpp" />
 		<Unit filename="includes/gui/click.h" />
 		<Unit filename="includes/gui/gui_element.h" />
+		<Unit filename="includes/gui/text.cpp" />
+		<Unit filename="includes/gui/text.h" />
 		<Unit filename="includes/gui/text_button.cpp" />
 		<Unit filename="includes/gui/text_button.h" />
 		<Unit filename="includes/gui/tile_menu.cpp" />
@@ -83,6 +85,8 @@
 		<Unit filename="includes/objects/object.h" />
 		<Unit filename="includes/objects/player.cpp" />
 		<Unit filename="includes/objects/player.h" />
+		<Unit filename="includes/objects/prop.cpp" />
+		<Unit filename="includes/objects/prop.h" />
 		<Unit filename="includes/objects/tile.cpp" />
 		<Unit filename="includes/objects/tile.h" />
 		<Unit filename="includes/objects/tileset.cpp" />

@@ -92,14 +92,5 @@ objects::Tile_type * Tile_menu::get_tile()
     return &types[current_type];
 }
 
-void Tile_menu::hide()
-{
-    visible=false;
-}
-
-void Tile_menu::unhide()
-{
-    visible=true;
-}
 
 }

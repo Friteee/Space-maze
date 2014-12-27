@@ -113,6 +113,8 @@ void Texture::init(std::string text, SDL_Color text_color, TTF_Font * font)
         SDL_DestroyTexture(*texture);
         SDL_FreeSurface(*surface);
     }
+    texture.reset();
+    surface.reset();
     surface = std::make_shared<SDL_Surface*>(TTF_RenderText_Solid( font, text.c_str(), text_color ));
     texture = std::make_shared<SDL_Texture*>(Video_subsystem::create_texture(*surface));
     if(!texture)

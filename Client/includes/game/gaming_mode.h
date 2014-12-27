@@ -30,8 +30,6 @@ class Gaming_mode : Program_mode
     bool change_mode;
     // old map
     Map game_map;
-    // grid
-    objects::Grid grid;
 };
 
 }

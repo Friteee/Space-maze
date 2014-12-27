@@ -19,6 +19,7 @@ Map::Map(std::string config_filename):
     tiles_texture=std::make_shared<SDL_Texture*>(SDL_CreateTextureFromSurface(video::Video_subsystem::get_instance().get_renderer(),*tiles_surface.get()));
     std::vector<std::string> enable_tiles =  map_config.find_strings("wall");
     // create tiles
+    unsigned int position_one=0;
     for(auto &x : enable_tiles)
     {
         vector<int> position = utility::get_numbers_from_string(x);
@@ -27,6 +28,19 @@ Map::Map(std::string config_filename):
         location.y=position[1];
         location.h=(*tiles_surface)->h;
         location.w=(*tiles_surface)->w;
+        bool is_repeating=false;
+        for(unsigned int a = position_one + 1; a<enable_tiles.size();a++)
+        {
+            if(x==enable_tiles[a])
+            {
+                is_repeating = true;
+            }
+        }
+        position_one++;
+        if(is_repeating)
+        {
+            continue;
+        }
         tiles.push_back(objects::Tile(location,tiles_texture));
     }
     map_gravity = atoi(map_config.find_string("gravity").c_str());
@@ -100,6 +114,7 @@ void Map::delete_wall(SDL_Point point)
         {
             auto vector_iterator = tiles.begin();
             tiles.erase(vector_iterator+a);
+            return;
         }
     }
 }

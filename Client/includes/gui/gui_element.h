@@ -19,8 +19,8 @@ class Gui_element
 
     virtual void show() = 0;
     virtual void update() = 0;
-    virtual void hide() = 0;
-    virtual void unhide() = 0;
+    inline void hide() {visible=false;}
+    inline void unhide() {visible=true;}
 
     protected :
 

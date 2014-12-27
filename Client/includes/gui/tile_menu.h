@@ -16,8 +16,6 @@ class Tile_menu : Gui_element
     Tile_menu(std::vector<objects::Tile_type>& init_types , utility::Configuration * config);
     void show()override;
     void update()override;
-    void hide()override;
-    void unhide()override;
     objects::Tile_type * get_tile();
 
 

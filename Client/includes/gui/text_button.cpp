@@ -93,14 +93,5 @@ void Text_button::update()
     }
 }
 
-void Text_button::hide()
-{
-    visible=false;
-}
-
-void Text_button::unhide()
-{
-    visible=true;
-}
 
 }

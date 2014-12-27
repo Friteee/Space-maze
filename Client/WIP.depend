@@ -1176,3 +1176,620 @@
 1419506806 d:\github\project\client\includes\gui\click.h
 	<SDL.h>
 
+1419567978 source:d:\github\space-maze\client\includes\game\editor_mode.cpp
+	"editor_mode.h"
+	"../objects/grid.h"
+	"../utility/timer.h"
+	"../gui/click.h"
+	<cstdio>
+	<cmath>
+
+1419567978 d:\github\space-maze\client\includes\game\editor_mode.h
+	"program_mode.h"
+	"tilemap.h"
+	"../objects/grid.h"
+	"../gui/text_button.h"
+	"../gui/tile_menu.h"
+
+1419567978 d:\github\space-maze\client\includes\game\program_mode.h
+	"../utility/configuration.h"
+
+1419567978 d:\github\space-maze\client\includes\utility\configuration.h
+	<string>
+	<vector>
+
+1419567978 d:\github\space-maze\client\includes\game\tilemap.h
+	<string>
+	<vector>
+	<fstream>
+	"../objects/tiletype.h"
+	"../objects/tileset.h"
+	"../objects/player.h"
+	"../objects/tile.h"
+	"../objects/background.h"
+
+1419567978 d:\github\space-maze\client\includes\objects\tiletype.h
+	"../video/texture.h"
+	<string>
+	<SDL.h>
+	<memory>
+
+1419567978 d:\github\space-maze\client\includes\video\texture.h
+	<string>
+	<memory>
+	<SDL.h>
+	<SDL_ttf.h>
+
+1419567978 d:\github\space-maze\client\sdl2\sdl.h
+	"SDL_main.h"
+	"SDL_stdinc.h"
+	"SDL_assert.h"
+	"SDL_atomic.h"
+	"SDL_audio.h"
+	"SDL_clipboard.h"
+	"SDL_cpuinfo.h"
+	"SDL_endian.h"
+	"SDL_error.h"
+	"SDL_events.h"
+	"SDL_joystick.h"
+	"SDL_gamecontroller.h"
+	"SDL_haptic.h"
+	"SDL_hints.h"
+	"SDL_loadso.h"
+	"SDL_log.h"
+	"SDL_messagebox.h"
+	"SDL_mutex.h"
+	"SDL_power.h"
+	"SDL_render.h"
+	"SDL_rwops.h"
+	"SDL_system.h"
+	"SDL_thread.h"
+	"SDL_timer.h"
+	"SDL_version.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_main.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_stdinc.h
+	"SDL_config.h"
+	<sys/types.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdarg.h>
+	<stdlib.h>
+	<malloc.h>
+	<stddef.h>
+	<stdarg.h>
+	<memory.h>
+	<string.h>
+	<strings.h>
+	<inttypes.h>
+	<stdint.h>
+	<ctype.h>
+	<math.h>
+	<iconv.h>
+	"begin_code.h"
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	"close_code.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_config.h
+	"SDL_platform.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_platform.h
+	"AvailabilityMacros.h"
+	"TargetConditionals.h"
+	"begin_code.h"
+	"close_code.h"
+
+1419567978 d:\github\space-maze\client\sdl2\begin_code.h
+
+1419567978 d:\github\space-maze\client\sdl2\close_code.h
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_assert.h
+	"SDL_config.h"
+	"begin_code.h"
+	<signal.h>
+	"close_code.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_atomic.h
+	"SDL_stdinc.h"
+	"SDL_platform.h"
+	"begin_code.h"
+	<intrin.h>
+	<libkern/OSAtomic.h>
+	"close_code.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_audio.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_endian.h"
+	"SDL_mutex.h"
+	"SDL_thread.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_error.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_endian.h
+	"SDL_stdinc.h"
+	<endian.h>
+	"begin_code.h"
+	"close_code.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_mutex.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_thread.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_atomic.h"
+	"SDL_mutex.h"
+	"begin_code.h"
+	<process.h>
+	"close_code.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_rwops.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_clipboard.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_cpuinfo.h
+	"SDL_stdinc.h"
+	<intrin.h>
+	<intrin.h>
+	<altivec.h>
+	<mmintrin.h>
+	<mm3dnow.h>
+	<xmmintrin.h>
+	<emmintrin.h>
+	"begin_code.h"
+	"close_code.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_events.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_gamecontroller.h"
+	"SDL_quit.h"
+	"SDL_gesture.h"
+	"SDL_touch.h"
+	"begin_code.h"
+	"close_code.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_video.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_surface.h"
+	"begin_code.h"
+	"close_code.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_pixels.h
+	"begin_code.h"
+	"close_code.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_rect.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_pixels.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_surface.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_blendmode.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_blendmode.h
+	"begin_code.h"
+	"close_code.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_keyboard.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_keycode.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_keycode.h
+	"SDL_stdinc.h"
+	"SDL_scancode.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_scancode.h
+	"SDL_stdinc.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_mouse.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_joystick.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_gamecontroller.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_joystick.h"
+	"begin_code.h"
+	"close_code.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_quit.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_gesture.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"SDL_touch.h"
+	"begin_code.h"
+	"close_code.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_touch.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_haptic.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_joystick.h"
+	"begin_code.h"
+	"close_code.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_hints.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_loadso.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_log.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_messagebox.h
+	"SDL_stdinc.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_power.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_render.h
+	"SDL_stdinc.h"
+	"SDL_rect.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_system.h
+	"SDL_stdinc.h"
+	"SDL_video.h"
+	"SDL_keyboard.h"
+	"begin_code.h"
+	"close_code.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_version.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1419567978 d:\github\space-maze\client\sdl2\sdl_ttf.h
+	"SDL.h"
+	"begin_code.h"
+	"close_code.h"
+
+1419567978 d:\github\space-maze\client\includes\objects\tileset.h
+	"tiletype.h"
+	<vector>
+	"../video/texture.h"
+
+1419567978 d:\github\space-maze\client\includes\objects\player.h
+	<SDL.h>
+	<string>
+	<memory>
+	"entity.h"
+	"../utility/timer.h"
+	"../utility/configuration.h"
+	"../video/texture.h"
+
+1419567978 d:\github\space-maze\client\includes\objects\entity.h
+	"object.h"
+
+1419567978 d:\github\space-maze\client\includes\objects\object.h
+	<sdl.h>
+
+1419567978 d:\github\space-maze\client\includes\utility\timer.h
+
+1419567978 d:\github\space-maze\client\includes\objects\tile.h
+	<SDL.h>
+	"object.h"
+	"../video/camera.h"
+	<string.h>
+	<memory>
+	<deque>
+	"tiletype.h"
+
+1419567978 d:\github\space-maze\client\includes\video\camera.h
+	<SDL.h>
+
+1419567978 d:\github\space-maze\client\includes\objects\background.h
+	<stdio.h>
+	<SDL.h>
+	"../video/window.h"
+	"../video/texture.h"
+	<string>
+	<memory>
+	<deque>
+
+1419567978 d:\github\space-maze\client\includes\video\window.h
+	<SDL.h>
+	"window.h"
+
+1419567978 d:\github\space-maze\client\includes\objects\grid.h
+	<stdint.h>
+
+1419690103 d:\github\space-maze\client\includes\gui\text_button.h
+	"gui_element.h"
+	<functional>
+	"../utility/configuration.h"
+
+1419690098 d:\github\space-maze\client\includes\gui\gui_element.h
+	<SDL.h>
+	"../video/texture.h"
+
+1419690113 d:\github\space-maze\client\includes\gui\tile_menu.h
+	<vector>
+	"../objects/tiletype.h"
+	"../utility/configuration.h"
+	"gui_element.h"
+
+1419567978 d:\github\space-maze\client\includes\gui\click.h
+	<SDL.h>
+
+1419567978 source:d:\github\space-maze\client\includes\game\game_logic.cpp
+	<SDL.h>
+	<stdio.h>
+	"game_logic.h"
+	"../video/window.h"
+	"../video/camera.h"
+	"../utility/timer.h"
+	"../utility/functions.h"
+	"../utility/configuration.h"
+	"../objects/tile.h"
+	"tilemap.h"
+	"map.h"
+	<cstdlib>
+
+1419567978 d:\github\space-maze\client\includes\game\game_logic.h
+	"../video/window.h"
+	"../objects/background.h"
+	"../objects/tile.h"
+	"../video/camera.h"
+	"../utility/configuration.h"
+	"map.h"
+	"tilemap.h"
+	"gaming_mode.h"
+	"editor_mode.h"
+
+1419567978 d:\github\space-maze\client\includes\game\map.h
+	"SDL.h"
+	<deque>
+	<string>
+	"../objects/object.h"
+	"../objects/player.h"
+	"../objects/background.h"
+	"../objects/tile.h"
+	"../utility/configuration.h"
+
+1419687357 d:\github\space-maze\client\includes\game\gaming_mode.h
+	"../objects/grid.h"
+	"program_mode.h"
+	"../objects/background.h"
+	"map.h"
+
+1419567978 d:\github\space-maze\client\includes\utility\functions.h
+	<vector>
+	<string>
+
+1419687367 source:d:\github\space-maze\client\includes\game\gaming_mode.cpp
+	"gaming_mode.h"
+	"game_logic.h"
+
+1419679530 source:d:\github\space-maze\client\includes\game\map.cpp
+	"map.h"
+	<SDL.h>
+	<vector>
+	<string>
+	<fstream>
+	"../utility/functions.h"
+	"../objects/collision.cpp"
+	<cstdlib>
+
+1419677591 d:\github\space-maze\client\includes\objects\collision.cpp
+	"entity.h"
+
+1419567978 source:d:\github\space-maze\client\includes\game\tilemap.cpp
+	<cstdio>
+	<fstream>
+	"../video/window.h"
+	"tilemap.h"
+	"../objects/tile.h"
+
+1419690222 source:d:\github\space-maze\client\includes\gui\text_button.cpp
+	"text_button.h"
+	<functional>
+	"../video/window.h"
+	"../utility/configuration.h"
+	"../utility/functions.h"
+	<vector>
+	<cstdio>
+
+1419690228 source:d:\github\space-maze\client\includes\gui\tile_menu.cpp
+	<vector>
+	"click.h"
+	"../objects/tiletype.h"
+	"../objects/collision.cpp"
+	"../utility/configuration.h"
+	"../video/camera.h"
+	"../video/window.h"
+	"tile_menu.h"
+	<cstdio>
+
+1419567978 source:d:\github\space-maze\client\includes\main.cpp
+	<SDL.h>
+	"video/window.h"
+	"game/game_logic.h"
+	<stdio.h>
+
+1419567978 source:d:\github\space-maze\client\includes\objects\background.cpp
+	<stdio.h>
+	<SDL.h>
+	"../video/window.h"
+	<string>
+	<memory>
+	"background.h"
+
+1419677591 source:d:\github\space-maze\client\includes\objects\collision.cpp
+	"entity.h"
+
+1419567978 source:d:\github\space-maze\client\includes\objects\grid.cpp
+	"grid.h"
+	"../video/window.h"
+	"../video/camera.h"
+
+1419567978 source:d:\github\space-maze\client\includes\objects\object.cpp
+	<SDL.h>
+	<stdio.h>
+	"object.h"
+
+1419567978 source:d:\github\space-maze\client\includes\objects\player.cpp
+	"player.h"
+	<string>
+	<memory>
+	"../video/camera.h"
+	"../video/window.h"
+	"../utility/functions.h"
+	<stdio.h>
+	<vector>
+	<cstdlib>
+	<math.h>
+
+1419567978 source:d:\github\space-maze\client\includes\objects\tile.cpp
+	"tile.h"
+	<stdio.h>
+	"../video/window.h"
+
+1419567978 source:d:\github\space-maze\client\includes\objects\tileset.cpp
+	"tileset.h"
+	<cstdio>
+	<memory>
+
+1419567978 source:d:\github\space-maze\client\includes\utility\configuration.cpp
+	"configuration.h"
+	<fstream>
+	<string>
+	<vector>
+
+1419567978 source:d:\github\space-maze\client\includes\utility\functions.cpp
+	<sstream>
+	<vector>
+
+1419567978 source:d:\github\space-maze\client\includes\utility\timer.cpp
+	"timer.h"
+	<SDL.h>
+
+1419567978 source:d:\github\space-maze\client\includes\video\camera.cpp
+	<SDL.h>
+	<stdio.h>
+	"camera.h"
+	"window.h"
+
+1419690592 source:d:\github\space-maze\client\includes\video\texture.cpp
+	"texture.h"
+	"window.h"
+	<assert.h>
+	<cstdio>
+
+1419567978 source:d:\github\space-maze\client\includes\video\window.cpp
+	<SDL.h>
+	<stdio.h>
+	"window.h"
+
+1419567978 source:d:\github\space-maze\client\includes\gui\click.cpp
+	"click.h"
+
+1419689271 source:d:\github\space-maze\client\includes\objects\prop.cpp
+	"prop.h"
+	"../video/camera.h"
+	<memory>
+
+1419688689 d:\github\space-maze\client\includes\objects\prop.h
+	"object.h"
+	<memory>
+
+1419690538 source:d:\github\space-maze\client\includes\gui\text.cpp
+	"text.h"
+	"../utility/functions.h"
+	"../video/window.h"
+
+1419690539 d:\github\space-maze\client\includes\gui\text.h
+	"text.h"
+	"gui_element.h"
+	"../utility/configuration.h"
+	<string>
+

@@ -43,17 +43,7 @@ bool Gaming_mode::handle_input()
             }
             break;
         case SDL_MOUSEBUTTONDOWN:
-            {
-                SDL_Rect camera_location = video::Camera::get_position();
-                if(event.button.button==SDL_BUTTON_RIGHT)
-                {
-                    printf("%i %i\n",event.button.x+camera_location.x,event.button.y+camera_location.y);
-                    game_map.delete_wall(SDL_Point{event.button.x+camera_location.x,event.button.y+camera_location.y});
-                }
-                else
-                    game_map.add_wall(SDL_Point{event.button.x+camera_location.x,event.button.y+camera_location.y});
-                break;
-            }
+            break;
         case SDL_WINDOWEVENT:
             switch(event.window.event)
             {
@@ -73,6 +63,16 @@ bool Gaming_mode::handle_input()
     {
         // minimize the window
         video::Video_subsystem::minimize();
+    }
+    SDL_Rect camera_location = video::Camera::get_position();
+    int x,y;
+    if(SDL_GetMouseState(&x , &y) & SDL_BUTTON(SDL_BUTTON_LEFT))
+    {
+        game_map.add_wall(SDL_Point{x+camera_location.x,y+camera_location.y});
+    }
+    if(SDL_GetMouseState(&x , &y) & SDL_BUTTON(SDL_BUTTON_RIGHT))
+    {
+        game_map.delete_wall(SDL_Point{x+camera_location.x,y+camera_location.y});
     }
     return true;
 }
@@ -105,7 +105,6 @@ bool Gaming_mode::run()
         game_map.update();
         main_background->show();
         game_map.show();
-        grid.draw();
         video::Video_subsystem::update_screen();
         // check the fps and sleep the necessary time
         fps++;
@@ -133,8 +132,7 @@ bool Gaming_mode::run()
 
 Gaming_mode::Gaming_mode(utility::Configuration * init_config):
     main_config(init_config),
-    game_map(main_config->find_string("map_config")),
-    grid(255,255,255,100)
+    game_map(main_config->find_string("map_config"))
 {
     change_mode = false;
     main_background = new objects::Background(main_config->find_string("main_background").c_str());

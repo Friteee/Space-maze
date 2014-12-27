@@ -28,10 +28,10 @@ inline bool is_overlapping(const Object* one , const Entity* two)
 inline bool is_overlapping(const SDL_Point* one , const SDL_Rect* two)
 {
 
-    if( !(one->x > two->x && one->x < two->x+two->w))
+    if( !(one->x >= two->x && one->x <= two->x+two->w))
         return false;
 
-    if( !(one->y > two->y && one->y < two->y+two->h))
+    if( !(one->y >= two->y && one->y <= two->y+two->h))
         return false;
 
     return true;

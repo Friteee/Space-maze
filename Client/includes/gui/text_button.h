@@ -16,8 +16,6 @@ class Text_button : Gui_element
     void show()override;
     void update()override;
     void init_function(std::function<void()> init_on_click);
-    void hide()override;
-    void unhide()override;
 
     private:
 
