@@ -9,11 +9,11 @@
 namespace gui
 {
 
-class Text : Gui_element
+class Text : public Gui_element
 {
     public:
 
-    Text(utility::Configuration * config, std::string init_text , int x , int y);
+    Text(utility::Configuration * config, std::string init_text , int x , int y, SDL_Color init_color_key);
     void show() override;
     void update() override;
     void change_text(std::string init_text);

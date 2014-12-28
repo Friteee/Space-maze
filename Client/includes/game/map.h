@@ -4,6 +4,7 @@
 #include "SDL.h"
 #include <vector>
 #include <string>
+#include "../gui/text.h"
 #include "../objects/object.h"
 #include "../objects/player.h"
 #include "../objects/prop.h"
@@ -32,6 +33,8 @@ class Map
     void save_map();
     //delete a wall
     void delete_wall(SDL_Point point);
+    //add a coin
+    void add_coin(SDL_Point point);
 
     private:
 
@@ -53,9 +56,16 @@ class Map
     int map_gravity;
     // coins
     std::vector<objects::Prop> coins;
-    //
-    //gui::Text
-
+    // text for the start
+    gui::Text user_start;
+    // text for the end
+    gui::Text user_won;
+    // text for counting those coins
+    gui::Text coin_counter;
+    // text for counting those coins
+    gui::Text time;
+    // timer, showing time since the start
+    utility::Timer start_timer;
 
 };
 

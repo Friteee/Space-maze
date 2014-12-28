@@ -22,7 +22,6 @@ bool Gaming_mode::handle_input()
             switch(event.key.keysym.sym)
             {
             case SDLK_q:
-                return false;
                 break;
             case SDLK_a:
                 break;
@@ -39,11 +38,17 @@ bool Gaming_mode::handle_input()
             case SDLK_TAB:
                 break;
             case SDLK_ESCAPE:
+                return false;
                 break;
             }
             break;
         case SDL_MOUSEBUTTONDOWN:
-            break;
+            {
+                SDL_Rect click_location;
+                click_location = video::Camera::get_position();
+                printf("Click location =  %i , %i\n",click_location.x+event.button.x,click_location.y+event.button.y);
+                break;
+            }
         case SDL_WINDOWEVENT:
             switch(event.window.event)
             {
@@ -87,6 +92,7 @@ bool Gaming_mode::run()
         // handle that input
         if(handle_input()==false)
         {
+            game_map.save_map();
             return false;
         }
         // reload video subsystem

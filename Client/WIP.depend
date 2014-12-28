@@ -1588,7 +1588,7 @@
 	<functional>
 	"../utility/configuration.h"
 
-1419690098 d:\github\space-maze\client\includes\gui\gui_element.h
+1419771521 d:\github\space-maze\client\includes\gui\gui_element.h
 	<SDL.h>
 	"../video/texture.h"
 
@@ -1626,10 +1626,11 @@
 	"gaming_mode.h"
 	"editor_mode.h"
 
-1419708543 d:\github\space-maze\client\includes\game\map.h
+1419778790 d:\github\space-maze\client\includes\game\map.h
 	"SDL.h"
 	<vector>
 	<string>
+	"../gui/text.h"
 	"../objects/object.h"
 	"../objects/player.h"
 	"../objects/prop.h"
@@ -1647,11 +1648,11 @@
 	<vector>
 	<string>
 
-1419706677 source:d:\github\space-maze\client\includes\game\gaming_mode.cpp
+1419774818 source:d:\github\space-maze\client\includes\game\gaming_mode.cpp
 	"gaming_mode.h"
 	"game_logic.h"
 
-1419708535 source:d:\github\space-maze\client\includes\game\map.cpp
+1419778791 source:d:\github\space-maze\client\includes\game\map.cpp
 	"map.h"
 	<SDL.h>
 	<vector>
@@ -1660,8 +1661,9 @@
 	"../utility/functions.h"
 	"../objects/collision.cpp"
 	<cstdlib>
+	<sstream>
 
-1419677591 d:\github\space-maze\client\includes\objects\collision.cpp
+1419769151 d:\github\space-maze\client\includes\objects\collision.cpp
 	"entity.h"
 
 1419567978 source:d:\github\space-maze\client\includes\game\tilemap.cpp
@@ -1705,7 +1707,7 @@
 	<memory>
 	"background.h"
 
-1419677591 source:d:\github\space-maze\client\includes\objects\collision.cpp
+1419769151 source:d:\github\space-maze\client\includes\objects\collision.cpp
 	"entity.h"
 
 1419567978 source:d:\github\space-maze\client\includes\objects\grid.cpp
@@ -1718,7 +1720,7 @@
 	<stdio.h>
 	"object.h"
 
-1419567978 source:d:\github\space-maze\client\includes\objects\player.cpp
+1419769890 source:d:\github\space-maze\client\includes\objects\player.cpp
 	"player.h"
 	<string>
 	<memory>
@@ -1760,7 +1762,7 @@
 	"camera.h"
 	"window.h"
 
-1419690592 source:d:\github\space-maze\client\includes\video\texture.cpp
+1419763371 source:d:\github\space-maze\client\includes\video\texture.cpp
 	"texture.h"
 	"window.h"
 	<assert.h>
@@ -1779,16 +1781,17 @@
 	"../video/camera.h"
 	<memory>
 
-1419688689 d:\github\space-maze\client\includes\objects\prop.h
+1419765072 d:\github\space-maze\client\includes\objects\prop.h
 	"object.h"
 	<memory>
 
-1419706942 source:d:\github\space-maze\client\includes\gui\text.cpp
+1419768073 source:d:\github\space-maze\client\includes\gui\text.cpp
 	"text.h"
 	"../utility/functions.h"
 	"../video/window.h"
+	<cstdio>
 
-1419706942 d:\github\space-maze\client\includes\gui\text.h
+1419767898 d:\github\space-maze\client\includes\gui\text.h
 	"text.h"
 	"gui_element.h"
 	"../utility/configuration.h"

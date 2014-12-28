@@ -3,24 +3,22 @@
 #include "text.h"
 #include "../utility/functions.h"
 #include "../video/window.h"
+#include <cstdio>
 
 namespace gui
 {
 
-Text::Text(utility::Configuration * config, std::string init_text, int x , int y)
+Text::Text(utility::Configuration * config, std::string init_text, int x , int y, SDL_Color init_color_key)
 {
     visible = true;
     text = init_text;
 
-    std::vector<int> colors = utility::get_numbers_from_string(config->find_string("button_color"));
-    color_key.r = colors[0];
-    color_key.g = colors[1];
-    color_key.b = colors[2];
-    color_key.a = 255;
+    color_key=init_color_key;
+    color_key.a=255;
 
-    font = TTF_OpenFont(config->find_string("font").c_str(),32);
+    font = TTF_OpenFont(config->find_string("font").c_str(),48);
 
-    texture.init(init_text,color_key,font);
+    texture.init(text,color_key,font);
 
     location.x = x;
     location.y = y;
@@ -46,6 +44,8 @@ void Text::change_text(std::string init_text)
 {
     text = init_text;
     texture.init(init_text,color_key,font);
+    location.w = texture.get_width();
+    location.h = texture.get_height();
 }
 
 }// end of namespace gui

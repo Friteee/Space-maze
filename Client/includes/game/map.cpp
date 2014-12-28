@@ -7,11 +7,16 @@
 #include "../utility/functions.h"
 #include "../objects/collision.cpp"
 #include <cstdlib>
+#include <sstream>
 
 namespace game {
 
 Map::Map(std::string config_filename):
-    map_config(config_filename)
+    map_config(config_filename),
+    user_start(&map_config,"Find the exit after collecting all the coins!",180,300,SDL_Color{255,255,255}),
+    user_won(&map_config,"You have won!",100,300,SDL_Color{255,255,255}),
+    coin_counter(&map_config,"Coins left = 0",50,20,SDL_Color{240,240,0}),
+    time(&map_config,"Timer = 0",850,20,SDL_Color{255,0,0})
 {
     // enable tile texture
     std::string tile_texture_location = map_config.find_string("wall_texture");
@@ -66,6 +71,14 @@ Map::Map(std::string config_filename):
     // create the player
     main_player=new objects::Player(map_config.find_string("players_config"));
 
+    start_timer.start();
+
+    user_won.hide();
+
+    std::ostringstream oss;
+    oss<<"Coins left = "<<coins.size();
+    coin_counter.change_text(oss.str());
+
     printf("Initialized map with %i tiles\n",tiles.size());
 }
 
@@ -73,10 +86,18 @@ void Map::update()
 {
     main_player->update();
     this->handle_collisions();
+    if(start_timer.get_ticks()>5000)
+    {
+        user_start.hide();
+    }
+    std::ostringstream oss;
+    oss<<"Timer = "<<start_timer.get_ticks()/1000<<"."<<start_timer.get_ticks()/100%10;
+    time.change_text(oss.str());
 }
 
 void Map::show()
 {
+    main_player->center_screen();
     //main_background.show();
     for (auto & a : tiles)
     {
@@ -86,8 +107,12 @@ void Map::show()
     {
         a.show();
     }
-    main_player->center_screen();
     main_player->show();
+    user_start.show();
+    coin_counter.show();
+    time.show();
+    user_won.show();
+
 
 }
 
@@ -95,12 +120,34 @@ void Map::handle_collisions()
 {
     for( auto & a : tiles)
     {
-        if(is_overlapping(&a , main_player))
+        if(objects::is_overlapping(a.get_location() , main_player->get_location()))
         {
             main_player->notify_collision(&a);
         }
     }
+    for(int a = 0 , b = coins.size() ; a<b ; a++)
+    {
+        if(objects::is_overlapping(coins[a].get_location() , main_player->get_location()))
+        {
 
+            coins.erase(coins.begin() + a);
+            std::ostringstream oss;
+            oss<<"Coins left = "<<coins.size();
+            coin_counter.change_text(oss.str());
+        }
+    }
+    SDL_Rect rectangle;
+    rectangle.x=1340;
+    rectangle.y=-1100;
+    rectangle.h=100;
+    rectangle.w=100;
+    if(objects::is_overlapping(rectangle , main_player->get_location())&&coins.size()==0&&(!user_won.get_visibility()))
+    {
+        std::ostringstream oss;
+        oss<<"Congratulations! Your score = "<<start_timer.get_ticks()/1000;
+        user_won.change_text(oss.str());
+        user_won.unhide();
+    }
 }
 
 void Map::add_wall(SDL_Point point)
@@ -151,7 +198,28 @@ void Map::save_map()
         SDL_Rect location = a.get_location();
         file<<"wall = "<<location.x<<","<<location.y<<std::endl;
     }
+    for(auto &a : coins)
+    {
+        SDL_Rect location = a.get_location();
+        file<<"coin = "<<location.x<<","<<location.y<<std::endl;
+    }
     file.close();
+}
+
+void Map::add_coin(SDL_Point point)
+{
+
+    if(point.x<0)
+        point.x-=10;
+    if(point.y<0)
+        point.y-=10;
+
+    SDL_Rect location;
+    location.x=point.x;
+    location.y=point.y;
+    location.h=(*coin_surface)->h;
+    location.w=(*coin_surface)->w;
+    coins.push_back(objects::Prop(location,coin_texture));
 }
 
 }// end of game namespace

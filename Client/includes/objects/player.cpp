@@ -309,7 +309,7 @@ void Player::handle_input()
     // handle the input
     const Uint8 * key_states = SDL_GetKeyboardState(nullptr);
     // ifs to handle input
-    if(key_states[SDL_SCANCODE_W]&&last_jump.get_ticks()>200)
+    if((key_states[SDL_SCANCODE_W]||key_states[SDL_SCANCODE_UP])&&last_jump.get_ticks()>200)
     {
         if(state==Player_state::moving_left || state==Player_state::standing )
             state = jumping_left;
@@ -318,7 +318,7 @@ void Player::handle_input()
         speed.y = - jump_speed;
         last_jump.reload();
     }
-    if(key_states[SDL_SCANCODE_A])
+    if(key_states[SDL_SCANCODE_A]||key_states[SDL_SCANCODE_LEFT])
     {
         if(state == Player_state::standing || state == Player_state::moving_right)
             state = Player_state::moving_left;
@@ -326,7 +326,7 @@ void Player::handle_input()
             state = Player_state::jumping_left;
         speed.x = - move_speed;
     }
-    else if(key_states[SDL_SCANCODE_D])
+    else if(key_states[SDL_SCANCODE_D]||key_states[SDL_SCANCODE_RIGHT])
     {
         if(state == Player_state::standing || state == Player_state::moving_left)
             state = Player_state::moving_right;

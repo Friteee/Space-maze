@@ -21,6 +21,7 @@ class Gui_element
     virtual void update() = 0;
     inline void hide() {visible=false;}
     inline void unhide() {visible=true;}
+    inline bool get_visibility(){ return visible;}
 
     protected :
 

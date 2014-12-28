@@ -8,7 +8,7 @@
 namespace objects
 {
 
-class Prop : Object
+class Prop : public Object
 {
     public:
 
