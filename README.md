@@ -6,8 +6,19 @@ This *game* is built in Code::Blocks, using C++ and SDL2 library.
 
 In case of any mistakes in the code feel free to show them.
 
-###Installation for Windows, Linux or Mac os x :
-######( Warning : Was not tested on Linux and Mac platfroms, but should work :) )
+####Controls:
+
+WASD or arrows for movement.
+Escape to exit from the game.
+
+### How to install on Windows:
+
+1. Click "Download zip" button to the right.
+2. Extract downloaded zip to a folder.
+3. Open the WIP.exe file there.
+4. Enjoy.
+
+### How to compile for Windows:
 
 1. Download latest Code::Blocks from [Codeblocks website](http://www.codeblocks.org/downloads) (Compiler should be working with c++11 at least)
 2. Open up WIP.cbp in WIP folder.
