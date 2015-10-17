@@ -2,9 +2,9 @@ Space Maze
 =======
 Space maze - a game, built as final project for "Introduction to computer science" online course on [EdX](https://www.edx.org/course/introduction-computer-science-harvardx-cs50x). Most of the source code was copied from my [initial attempt](https://github.com/Friteee/S.H.A.P.E.) on this project.
 
-This *game* is built in Code::Blocks, using C++ and SDL2 library.
+This game is built in Code::Blocks, using C++ and SDL2 library.
 
-In case of any mistakes in the code feel free to show them.
+####Warning : Sprites for this game were made by a person without particular skills in graphics.
 
 ####Controls:
 
@@ -15,8 +15,7 @@ Escape to exit from the game.
 
 1. Click "Download zip" button to the right.
 2. Extract downloaded zip to a folder.
-3. Open the WIP.exe file there.
-4. Enjoy.
+3. Open the WIP.exe.
 
 ### How to compile for Windows:
 
